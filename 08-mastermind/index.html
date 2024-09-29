@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Mastermind Game</h1>
+        <p id="instructions">Guess the secret color combination!</p>
+
+        <form id="guessForm" aria-labelledby="instructions">
+            <div class="color-selection">
+                <label for="color1">Choose color 1:</label>
+                <select id="color1" name="color1" aria-label="First color choice">
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="purple">Purple</option>
+                    <option value="orange">Orange</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                </select>
+            </div>
+            <div class="color-selection">
+                <label for="color2">Choose color 2:</label>
+                <select id="color2" name="color2" aria-label="Second color choice">
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="purple">Purple</option>
+                    <option value="orange">Orange</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>                </select>
+            </div>
+            <div class="color-selection">
+                <label for="color3">Choose color 3:</label>
+                <select id="color3" name="color3" aria-label="Third color choice">
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="purple">Purple</option>
+                    <option value="orange">Orange</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                </select>
+            </div>
+            <div class="color-selection">
+                <label for="color4">Choose color 4:</label>
+                <select id="color4" name="color4" aria-label="Fourth color choice">
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="purple">Purple</option>
+                    <option value="orange">Orange</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                </select>
+            </div>
+            <button type="submit">Submit Guess</button>
+        </form>
+
+        <div id="feedback" aria-live="polite" aria-atomic="true"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

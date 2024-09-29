@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess a Number</title>
+    <style>
+        #container {
+            margin:auto;
+            border:5px solid lightblue;
+            font-size: 30px;
+            padding:10px;
+            text-align: center;
+            height: 260px;
+            width:600px;
+            background-color: #0e2433;
+        }
+
+        p {
+            color:red;
+        }
+
+        #userinput {
+            width: 170px;
+            height: 16px;
+        }
+
+        #outputText {
+            color:yellow
+        }
+    </style>
+</head>
+<body>
+   <div id="container">
+     <p>Guess a Number Between 1 and 100</p>
+     <p id="outputText"> Enter a Number Below</p>
+     <label><input id="userinput"></label>
+     <button id="enterbutton">Enter</button>
+     <button id="againbutton">Play Again</button>
+    </div>
+</body>
+<script>
+let enterbutton = document.getElementById("enterbutton");
+let againbutton = document.getElementById("againbutton");
+let outputText = document.getElementById("outputText");
+
+let randomNumber = Math.floor(Math.random() * 100) + 1; // Generate random number between 1 and 100
+
+function checkNumber() {
+    let input = parseInt(document.getElementById("userinput").value);
+    if (input === randomNumber) {
+        outputText.innerHTML = "You Guessed Right" + ", " + "It was " + randomNumber;
+        outputText.style.color = "green";
+    } else if (input > randomNumber && input <= 100) {
+        outputText.innerHTML = "You Guessed Too High";
+    } else if (input < randomNumber && input >= 1) {
+        outputText.innerHTML = "You Guessed Too Low";
+    } else if (input < 1 || input > 100) {
+        outputText.innerHTML = "Enter a number between 1 and 100";
+    } else if (isNaN(input)) {
+        outputText.innerHTML = "That's Not a Number!";
+    }
+}
+
+enterbutton.addEventListener("click", checkNumber);
+againbutton.addEventListener("click", function(){
+    location.reload();
+});
+</script>
+</html>

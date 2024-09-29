@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Morse</title>
+</head>
+<body>
+    <script src="le morse.js"></script> 
+
+    <div class="container">
+
+        <h1>Morse Code Translator</h1>
+    
+        <label for="inputText">Enter Text:</label>
+    
+        <input type="text" id="inputText">
+    
+        <button onclick="translateText()">Translate</button>
+    
+        <div id="output"></div>
+    
+        <div id="morseCode"></div> 
+    
+        <div id="decodedText"></div>    
+
+</body> 
+
+<script>
+  function translateText() {
+            const inputText = document.getElementById('inputText').value
+
+            const morseCode = getLatinCharacterList(inputText)
+
+            document.getElementById('morseCode').textContent = `Morse Code: ${morseCode}`
+
+            const decodedText = translateLatinCharacter(morseCode)
+
+            document.getElementById('decodedText').textContent = `Decoded Text: ${decodedText}`
+        }   
+      
+</script>
+</html>

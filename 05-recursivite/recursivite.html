@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Recursivite</title>
+</head>
+<body>
+    
+</body>
+
+<script> 
+// Etap 1: Defining an array and a function to calculate the sum of its elements
+
+const array = [1, 2, 3, 4, 5]
+function sum1(array) { 
+    let total = 0  // Initializing a variable to store the sum
+    for (let number of array) { 
+        total += number; // Adding each element to the total
+    }
+    return total; // Returning the sum
+}
+
+console.log(array)
+let result1 = sum1(array)
+console.log(array, result1)
+
+// Etap 2: Defining a recursive function to calculate the sum of array elements
+
+function sum2(array) { 
+    if (array.length === 0) { // Base case: if the array is empty, return 0
+        return 0
+    } else {
+        // Recursive case: return the first element plus the sum of the rest of the array
+        return array[0] + sum2(array.slice(1))
+    }
+}
+
+const result2 = sum2(array)
+console.log(array, result2)
+
+// ETAP 3: Defining a recursive function to calculate factorial
+
+function factorial(n) {
+    if (n === 0 || n === 1) { // Base case: if n is 0 or 1, return 1
+        return 1
+    } else {
+        // Recursive case: return n multiplied by factorial of (n - 1)
+        return n * factorial(n - 1)
+    }
+}
+
+const number = 5
+const result3 = factorial(number)
+console.log("Le factoriel de", number, "est :", result3)
+
+// Etap 4: Defining a function to calculate Fibonacci series
+
+function fibonacci(x) { 
+    if (x === 0) { // Base case: if x is 0, return 0
+        return 0;
+    } else if (x === 1) { // Base case: if x is 1, return 1
+        return 1
+    } else {
+        let a = 0
+        let b = 1
+        let sum
+        for (let i = 2; i <= x; i++) { // Calculating Fibonacci series
+            sum = a + b
+            a = b
+            b = sum
+        }
+        return sum
+    }
+}
+
+const term = 10
+const result4 = fibonacci(term)
+console.log("Le terme", term, "de la suite de Fibonacci est :", result4)
+</script>
